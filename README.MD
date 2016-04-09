@@ -17,4 +17,27 @@ Once you’ve cloned the repo you can go ahead an link the **Vagrantfile** to a 
 	$ ln -s mage2-docker/docker-host/vagrant/Vagrantfile ~/virtual-maschines/Vagrantfile
 	$ vagrant up
 
-That should get your base docker-host up and running
+That should get your base docker-host up and running.
+
+In case you find the need to log into your recently created docker-host, you can do so by the following command:
+
+	$ cd ~/virtual-maschines/mage2-docker
+	$ vagrant ssh
+
+You then get prompted to enter as password. It’s **tcuser**
+
+Once you successfully logged in you should see a screen similar to this:
+
+							##         .
+	                  ## ## ##        ==
+	               ## ## ## ## ##    ===
+	           /"""""""""""""""""\___/ ===
+	      ~~~ {~~ ~~~~ ~~~ ~~~~ ~~~ ~ /  ===- ~~~
+	           \______ o           __/
+	             \    \         __/
+	              \____\_______/
+	 _                 _   ____     _            _
+	| |__   ___   ___ | |_|___ \ __| | ___   ___| | _____ _ __
+	| '_ \ / _ \ / _ \| __| __) / _` |/ _ \ / __| |/ / _ \ '__|
+	| |_) | (_) | (_) | |_ / __/ (_| | (_) | (__|   <  __/ |
+	|_.__/ \___/ \___/ \__|_____\__,_|\___/ \___|_|\_\___|_|
