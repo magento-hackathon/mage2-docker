@@ -13,15 +13,15 @@ You should be able to use the mage2-docker project on every machine that is capa
 #### Vagrant
 Once you’ve cloned the repo you can go ahead an link the **Vagrantfile** to a separate directory (or the one you have your current machines in). That way you get the most updated version without having to worry about Vagrant polluting your local Git repo directory.
 
-	$ mkdir ~/virtual-maschines
-	$ ln -s mage2-docker/docker-host/vagrant/Vagrantfile ~/virtual-maschines/Vagrantfile
+	$ mkdir ~/virtual-machines
+	$ ln -s mage2-docker/docker-host/vagrant/Vagrantfile ~/virtual-machines/Vagrantfile
 	$ vagrant up
 
 That should get your base docker-host up and running.
 
 In case you find the need to log into your recently created docker-host, you can do so by the following command:
 
-	$ cd ~/virtual-maschines/mage2-docker
+	$ cd ~/virtual-machines/mage2-docker
 	$ vagrant ssh
 
 You then get prompted to enter as password. It’s **tcuser**
