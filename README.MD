@@ -17,7 +17,7 @@ Once you’ve cloned the repo you can go ahead and link the **Vagrantfile** to a
 	$ ln -s mage2-docker/docker-host/vagrant/Vagrantfile ~/virtual-machines/Vagrantfile
 	$ vagrant up
 
-That should get your base docker-host up and running.
+That should get your base docker host up and running.
 
 In case you find the need to log into your recently created docker host, you can do so with the following command:
 
