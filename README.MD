@@ -8,5 +8,6 @@ We’re going to split this up into a couple steps:
 - Have a CLI tool to compile the compose.yml file that’s going to be used by the docker-compose tool
 
 ## Prerequisites
+You should be able to use the mage2-docker project on every machine that is capable of running docker natively. Unfortunately this is not the case for Windows, MacOS X just yet. Therefore we will have to make sure we have a running *docker host* in place. If you already have a running docker-host running you skip this part.
 ### Docker host
 #### Vagrant
