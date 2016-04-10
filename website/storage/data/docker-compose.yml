@@ -1,0 +1,67 @@
+app:
+  image: mageinferno/magento2-nginx:1.9.9-2
+  ports:
+    - "80:80"
+  links:
+    - php-fpm
+    - db
+  volumes_from:
+    - appdata
+  environment:
+    - APP_MAGE_MODE=developer
+    - VIRTUAL_HOST=
+
+appdata:
+  image: tianon/true
+  volumes:
+    - /src
+    - ./src/app/code:/src/app/code
+    - ~/.composer:/root/.composer
+
+"php-fpm":
+  image: mageinferno/magento2-php:7.0.2-fpm-1
+  links:
+    - db
+  volumes_from:
+    - appdata
+  environment:
+    - APP_MAGE_MODE=developer
+    - PHP_MEMORY_LIMIT=2048M
+
+db:
+  image: mariadb:10.1.10
+  ports:
+    - "3306:3306"
+  volumes_from:
+    - dbdata
+  environment:
+    - MYSQL_ROOT_PASSWORD=
+    - MYSQL_DATABASE=
+    - MYSQL_USER=
+    - MYSQL_PASSWORD=
+
+dbdata:
+  image: tianon/true
+  volumes:
+    - /var/lib/mysql
+
+setup:
+  image: mageinferno/magento2-php:7.0.2-fpm-1
+  command: /usr/local/bin/mage-setup
+  links:
+    - db
+  volumes_from:
+    - appdata
+  environment:
+    - M2SETUP_DB_HOST=db
+    - M2SETUP_DB_NAME=
+    - M2SETUP_DB_USER=
+    - M2SETUP_DB_PASSWORD=
+    - M2SETUP_BASE_URL=
+    - M2SETUP_ADMIN_FIRSTNAME=
+    - M2SETUP_ADMIN_LASTNAME=
+    - M2SETUP_ADMIN_EMAIL=
+    - M2SETUP_ADMIN_USER=
+    - M2SETUP_ADMIN_PASSWORD=
+    - M2SETUP_VERSION=2.0.0
+    - M2SETUP_USE_SAMPLE_DATA=false

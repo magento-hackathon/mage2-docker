@@ -12,3 +12,4 @@
 */
 
 $app->get('/', 'IndexController@index');
+$app->post('process', 'IndexController@process');
