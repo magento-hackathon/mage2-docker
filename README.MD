@@ -3,7 +3,6 @@ The goal of this hackathon project is about providing a simple way of spinning u
 
 We’re going to split this up into a couple steps:
 - Docker host installation
-- Installing the docker system
 - Compiling standardized docker images for multiple purposes and make them distributable oder GitHub or DockerHub
 - Have a CLI tool to compile the compose.yml file that’s going to be used by the docker-compose tool
 
